@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tiy-dallas-june-2017/cool-school#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "mustache-express": "^1.2.5"
   }
 }
