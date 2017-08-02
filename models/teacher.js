@@ -1,11 +1,14 @@
-const data = [
-  { name: 'Teacher 1', age: 30 },
-  { name: 'Teacher 2', age: 31 },
-  { name: 'Teacher 3', age: 47 }
-];
+const mongo = require('../mongo');
 
-function all() {
-  return data;
+function all(cb) {
+
+  const db = mongo.db();
+
+  db.collection('teachers').find().toArray(function(err, docs) {
+    console.log('err', err);
+    console.log('docs', docs);
+    cb(docs);
+  });
 }
 
 module.exports = {

@@ -4,8 +4,10 @@ const student = require('../models/student');
 
 router.get('/students', function(req, res) {
 
-  res.render('students', {
-    students: student.all()
+  student.all(function(docs) {
+    res.render('students', {
+      students: docs
+    });
   });
 });
 
